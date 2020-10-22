@@ -8,6 +8,8 @@ import { LandingComponent } from './landing/landing.component';
 import {SingleCharsComponent} from './single-chars/single-chars.component';
 import {FormsModule} from '@angular/forms';
 
+import {APP_BASE_HREF} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/morse-player/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

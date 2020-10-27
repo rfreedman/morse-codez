@@ -23,7 +23,6 @@ import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from '@angular/co
     FormsModule
   ],
   providers: [
-    // {provide: APP_BASE_HREF, useValue: '/morse-player/'},
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]

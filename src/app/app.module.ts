@@ -8,7 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import {SingleCharsComponent} from './single-chars/single-chars.component';
 import {FormsModule} from '@angular/forms';
 
-import {APP_BASE_HREF} from '@angular/common';
+import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,10 @@ import {APP_BASE_HREF} from '@angular/common';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/morse-player/'}],
+  providers: [
+    // {provide: APP_BASE_HREF, useValue: '/morse-player/'},
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
